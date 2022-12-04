@@ -3,13 +3,104 @@
 	padding: 0;
 	font-family:sans-serif;
 }
-
+body{
+	overflow: hidden;
+}
+.container .container{
+	height: 100%;
+	width: 250px;
+	min-height: 100vh;
+	background: linear-gradient(45deg, black, grey);
+	color: #fff;
+	position: absolute;
+	z-index: 1;
+	transition: 0.5s ease;
+	transform: translateX(-250px);
+}
+.container .container .head{
+	color: #fbfdce;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 30px;
+	text-transform: uppercase;
+	text-align: left;
+	letter-spacing: 3px;
+	background: linear-gradient(30deg,#df0155,#ed4901)
+}
 .container{
 	width: 100%;
 	min-height: 100vh;
 	background: linear-gradient(45deg, black, grey);
 	color: #fff;
 	position: relative;
+}
+ol{
+	width: 100%;
+	list-style: none;
+}
+ol li{
+	display: block;
+	width: 100%;
+}
+ol li a{
+	color: #fbfdce;
+	padding: 15px 10px;
+	text-decoration: none;
+	display: block;
+	font-size: 20px;
+	letter-spacing: 1px;
+	position: relative;
+	transition: 0.3s;
+	overflow: hidden;
+}
+ol li a i{
+	width: 70px;
+	font-size: 25px;
+	text-align: center;
+	padding-left: 30px;
+}
+ol li:hover a{
+	background: #030303;
+	color: #00eaff;
+	letter-spacing: 5px;
+}
+input{
+	-webkit-appearance: none;
+	visibility: hidden;
+	display: none;
+}
+span{
+	position: absolute;
+	right: -40px;
+	top: 30px;
+	font-size: 25px;
+	border-radius: 3px;
+	color: #fff;
+	padding: 3px 8px;
+	cursor: pointer;
+	background: #000;
+}
+#bars{
+	background: red;
+}
+#check:checked ~ .container{
+	transform: translateX(0);
+}
+#check:checked ~ .container #bars{
+	display: none;
+}
+section{
+	min-height: 100vb;
+	background: url(img.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: 0.5s;
+	filter: brightness(60%);
+}
+#check:checked ~ section{
+	transform: scale(1.2);
+	filter: brightness(20%);
 }
 .navbar{
 	width: 90%;
@@ -176,7 +267,7 @@ nav ul li a:hover{
 	.checkbtn{
 		display: block;
 	}
-	ul{
+	nav ul{
 		position: fixed;
 		width: 100%;
 		height: 100vh;
@@ -189,7 +280,8 @@ nav ul li a:hover{
 	nav ul li{
 		list-style: none;
 		display: inline-block;
-		margin-left: 60px;
+		margin-left: 50px 0;
+		line-height: 30px;
 	}
 	nav ul li a{
 		text-decoration: none;
